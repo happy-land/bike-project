@@ -148,7 +148,7 @@ sliderLeftButton.addEventListener('click', () => {
 const handleInput = (target) => {
   // console.log(target.parentElement);
 
-  console.log(target.value);
+  // console.log(target.value);
   if (target.value.length > 0) {
     submitButton.classList.remove('form__btn-submit_hidden');
   } else {

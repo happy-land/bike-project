@@ -1,5 +1,4 @@
 .intro {
-  border: 1px solid red;
   font-family: $font-family;
   display: flex;
   justify-content: space-between;
@@ -68,9 +67,7 @@
   }
 
   &__media-desktop {
-    border: 1px solid red;
     box-sizing: border-box;
-    // max-width: 610px;
 
     @media screen and (max-width: $mobile-width) {
       display: none;
