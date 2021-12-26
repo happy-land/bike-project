@@ -1,12 +1,17 @@
 .header {
   font-family: $font-family;
+  position: fixed;
+  right: 0;
+  inset: 0;
+  
 
   &__container {
+    // border: 1px solid red;
     display: flex;
-    // border: 1px solid rgb(134, 134, 117);
     max-width: 1440px;
     min-width: 320px;
     margin: 0 auto;
+    background-color: $bg-color-container;
   }
 
   &__nav-bar {
