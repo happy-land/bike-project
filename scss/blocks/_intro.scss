@@ -1,0 +1,144 @@
+.intro {
+  border: 1px solid red;
+  font-family: $font-family;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 120px;
+
+  @media screen and (max-width: $mobile-width) {
+    justify-content: center;
+    padding: 0;
+  }
+
+  &__content {
+
+    @media screen and (max-width: $mobile-width) {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    // border: 1px solid grey;
+    margin: 80px 0 50px;
+    padding: 0;
+    width: 460px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 60px;
+    letter-spacing: -0.5px;
+    color: $text-color-title;
+
+    @media screen and (max-width: $mobile-width) {
+      margin: 40px 18px;
+      width: calc(284px - 2 * 18px);
+      text-align: left;
+      font-size: 32px;
+      line-height: 40px;
+
+      letter-spacing: -0.5px;
+    }
+  }
+
+  &__text {
+    // border: 1px solid grey;
+    margin: 0 0 52px 0;
+    padding: 0;
+    width: 460px;
+    text-align: left;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: $text-color-text;
+    opacity: 0.7;
+
+    @media screen and (max-width: $mobile-width) {
+      width: calc(100% - 2*18px);
+      max-width: 610px;
+      margin: 40px auto;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__media-desktop {
+    border: 1px solid red;
+    box-sizing: border-box;
+    // max-width: 610px;
+
+    @media screen and (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+  &__media-mobile {
+    box-sizing: border-box;
+    display: none;
+
+    @media screen and (max-width: $mobile-width) {
+      display: block;
+      width: calc(100% - 2*18px);
+      padding-left: 30px;
+      margin: 0 auto;
+      max-width: 610px;
+      min-width: 254px;
+    }
+  }
+
+  &__btn-details {
+    margin: 0;
+    border: 0;
+    border-radius: $btn-border-radius;
+    width: $btn-width-desktop;
+    height: $btn-height-desktop;
+    color: $btn-text-color;
+    background-color: $btn-bg-color;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    @media screen and (max-width: $mobile-width) {
+      // text-align: center;
+      width: calc(100% - 2*18px);
+      margin: 0 auto 40px;
+    }
+  }
+
+  &__btn-details:hover {
+    animation: gradient 0.1s ease-in 1 normal forwards;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-image: linear-gradient(to right, #319e75 0px 10px, #24b47e 10px 180px);
+    }
+    33% {
+      background-image: linear-gradient(to right, #319e75 10px 40px, #24b47e 40px 180px);
+    }
+    67% {
+      background-image: linear-gradient(to right, #319e75 40px 100px, #24b47e 100px 180px);
+    }
+    100% {
+      background-image: linear-gradient(to right, #319e75 100px 179px, #24b47e 179px 180px);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $mobile-width) {
+      // margin-left: 30px;
+    }
+  }
+}

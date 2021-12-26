@@ -1,0 +1,162 @@
+.bikes {
+  border: 1px solid red;
+  font-family: $font-family;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 120px;
+
+  position: relative;
+
+  @media screen and (max-width: $mobile-width) {
+    padding: 40px 0;
+  }
+
+  &__title {
+    margin: 0 0 54px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 60px;
+    letter-spacing: -0.5px;
+    color: $text-color-title;
+
+    @media screen and (max-width: $mobile-width) {
+      border-top: 1px solid #e3e3e3;
+      padding-top: 40px;
+      margin: 0 auto;
+      width: calc(100% - 2 * 18px);
+
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  &__nav-bar {
+    border: 1px solid red;
+    display: flex;
+    position: absolute;
+    top: 92px;
+    right: 120px;
+
+    @media screen and (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+
+  &__link-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__list-item {
+    // border: 1px solid red;
+    margin: 0;
+    padding: 0;
+    margin-right: 34px;
+  }
+
+  &__list-item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: $text-color-text;
+    opacity: 0.7;
+    transition: opacity 0.1s ease-in;
+
+    &_active {
+      font-weight: 600;
+      color: $text-color-title;
+      opacity: 1;
+      transition: opacity 0.1s ease-in;
+    }
+
+    &_active:hover {
+      opacity: 0.75;
+    }
+  }
+  &__link:hover {
+    opacity: 0.6;
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+  &__road,
+  &__gravel,
+  &__tt {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(340px, 1fr));
+    column-gap: 30px;
+
+    &_hidden {
+      display: none;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: grid;
+      grid-template-columns: repeat(1, minmax(340px, 1fr));
+      column-gap: 30px;
+  }
+
+  &__card {
+    // border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+    margin-bottom: 50px;
+    width: 380px;
+    height: 380px;
+    margin-top: 66px;
+    background-color: $bg-color-card;
+    position: relative;
+
+    @media screen and (max-width: $mobile-width) {
+      width: calc(100% - 2*18px);
+      max-width: 284px;
+      max-height: 284px;
+      margin: 0 auto;
+    }
+  }
+
+  &__bike-photo {
+  }
+
+  &__card-image {
+    border-radius: 20px;
+
+    @media screen and (max-width: $mobile-width) {
+      width: 100%;
+    }
+  }
+
+  &__card-title {
+    position: absolute;
+    left: 0;
+    bottom: -32px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: $text-color-title;
+  }
+}

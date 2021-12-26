@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Катайся</title>
+  <link rel="stylesheet" href="./pages/index.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+</head>
+
+<body class="container">
+  <div class="page">
+    <header class="header">
+      <div class="header__container">
+        <nav class="header__nav-bar">
+          <ul class="header__link-list">
+            <li class="header__list-item">
+              <a href="#surface-slider" class="header__link">Покрытия и градиенты</a>
+            </li>
+            <li class="header__list-item">
+              <a href="#bikes" class="header__link">Велосипеды</a>
+            </li>
+            <li class="header__list-item">
+              <a href="#training" class="header__link">Тренировки</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- бургер -->
+        <button type="button" class="header__burger-button"></button>
+      </div>
+    </header>
+    <main class="content">
+      <section class="intro">
+        <div class="intro__content">
+          <h1 class="intro__title">Шоссе, ТТ и&nbsp;Грэвел</h1>
+          <div class="intro__media-mobile">
+            <img src="./images/intro_image.jpeg" alt="Выбор велосипеда - Шоссе, ТТ и Грэвел" class="intro__image" />
+          </div>
+          <p class="intro__text">Триатлонные старты, горные серпантины или грейвел заезды по живописным маршрутам
+            – нужно только определиться с выбором велосипеда и отправиться в путь.</p>
+          <button type="button" class="intro__btn-details">Подробнее</button>
+        </div>
+        <div class="intro__media-desktop">
+          <img src="./images/intro_image.jpeg" alt="Выбор велосипеда - Шоссе, ТТ и Грэвел" class="intro__image" />
+        </div>
+
+      </section>
+      <section class="quote">
+        <div class="quote__media">
+          <img src="./images/eddy-merckx.jpeg" alt="Эдди Меркс" class="quote__image" />
+        </div>
+        <div class="quote__content">
+          <blockquote class="quote__text">
+            &laquo;Катайся много или мало, долго или коротко, как хочешь - но
+            катайся&raquo;
+          </blockquote>
+          <p class="quote__author">Эдди Меркс</p>
+          <p class="quote__occupation">Велогонщик</p>
+        </div>
+      </section>
+
+      <section class="surface-slider" id="surface-slider">
+        <div class="surface-slider__content-container">
+          <div class="surface-slider__content">
+            <!-- контент заполняем по шаблону -->
+
+            <!-- <h2 class="surface-slider__title">Шоссе</h2>
+        <p class="surface-slider__text">На шоссейном велосипеде можно ездить по асфальту на разных градиентах: будь то
+          горы или равнины. Гонки проходят в командном пелотоне, но тренироваться можно и самостоятельно.</p> -->
+
+          </div>
+        </div>
+
+        <div class="surface-slider__media">
+          <div class="surface-slider__media-container">
+            <img src="./images/surface-road.jpeg" alt="Шоссе" class="surface-slider__image" />
+            <img src="./images/surface-gravel.jpeg" alt="Грэвэл" class="surface-slider__image" />
+            <img src="./images/surface-tt.jpeg" alt="Триатлон (ТТ)" class="surface-slider__image" />
+          </div>
+        </div>
+        <div class="surface-slider__action-area">
+          <button type="button" class="surface-slider__btn surface-slider__btn-left"></button>
+          <button type="button" class="surface-slider__btn surface-slider__btn-right"></button>
+        </div>
+      </section>
+
+      <section class="bikes" id="bikes">
+        <h2 class="bikes__title">Велосипеды</h2>
+        <nav class="bikes__nav-bar">
+          <ul class="bikes__link-list">
+            <li class="bikes__list-item">
+              <a href="#" class="bikes__link bikes__link_active">Шоссе</a>
+            </li>
+            <li class="bikes__list-item">
+              <a href="#" class="bikes__link">Грэвел</a>
+            </li>
+            <li class="bikes__list-item">
+              <a href="#" class="bikes__link">TT</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Слайдер -->
+        <div class="bikes__slider">
+          <div class="bikes__list swiper-wrapper">
+
+            <!-- Шоссе слайд -->
+            <div class="bikes__road swiper-slide">
+              <div class="bikes__card">
+                <figure class="bikes__bike-photo">
+                  <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Cervelo-Caledonia-5"
+                    class="bikes__card-image">
+                  <figcaption class="bikes__card-title">Cervelo Caledonia-5</figcaption>
+                </figure>
+              </div>
+              <div class="bikes__card">
+                <figure class="bikes__bike-photo">
+                  <img src="./images/bikes/Cannondale-Systemsix-Himod.jpg" alt="Cannondale Systemsix Himod"
+                    class="bikes__card-image">
+                  <figcaption class="bikes__card-title">Cannondale Systemsix Himod</figcaption>
+                </figure>
+              </div>
+              <div class="bikes__card">
+                <figure class="bikes__bike-photo">
+                  <img src="./images/bikes/Trek-Domane-SL-7.jpg" alt="Trek-Domane-SL-7" class="bikes__card-image">
+                  <figcaption class="bikes__card-title">Trek-Domane-SL-7</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <!-- Грэвел слайд -->
+            <div class="bikes__gravel swiper-slide">
+              <div class="bikes__card">
+                <figure class="bikes__bike-photo">
+                  <img src="./images/bikes/Cervelo-Aspero-GRX-810.jpg" alt="Cervelo Aspero GRX 810"
+                    class="bikes__card-image">
+                  <figcaption class="bikes__card-title">Cervelo Aspero GRX 810</figcaption>
+                </figure>
+              </div>
+              <div class="bikes__card">
+                <figure class="bikes__bike-photo">
+                  <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Specialized S-Works Diverge"
+                    class="bikes__card-image">
+                  <figcaption class="bikes__card-title">Specialized S-Works Diverge</figcaption>
+                </figure>
+              </div>
+              <div class="bikes__card">
+                <figure class="bikes__bike-photo">
+                  <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Cannondale Topstone Lefty 3"
+                    class="bikes__card-image">
+                  <figcaption class="bikes__card-title">Cannondale Topstone Lefty 3</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <!-- ТТ слайд -->
+            <div class="bikes__tt swiper-slide">
+              <div class="bikes__card">
+                <figure class="bikes__bike-photo">
+                  <img src="./images/bikes/Specialized-S-Works-Shiv.jpg" alt="Specialized S-Works Shiv"
+                    class="bikes__card-image">
+                  <figcaption class="bikes__card-title">Specialized S-Works Shiv</figcaption>
+                </figure>
+              </div>
+              <div class="bikes__card">
+                <figure class="bikes__bike-photo">
+                  <img src="./images/bikes/BMC-Timemachine-01-ONE.jpg" alt="BMC Timemachine 01 ONE"
+                    class="bikes__card-image">
+                  <figcaption class="bikes__card-title">BMC Timemachine 01 ONE</figcaption>
+                </figure>
+              </div>
+              <div class="bikes__card">
+                <figure class="bikes__bike-photo">
+                  <img src="./images/bikes/Cervelo P-Series.jpg" alt="Cervelo P-Series" class="bikes__card-image">
+                  <figcaption class="bikes__card-title">Cervelo P-Series</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-pagination"></div>
+
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+
+
+
+          <!-- <div class="bikes__cards">
+          <div class="bikes__road">
+            <div class="bikes__card">
+              <figure class="bikes__bike-photo">
+                <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Cervelo-Caledonia-5" class="bikes__card-image">
+                <figcaption class="bikes__card-title">Cervelo Caledonia-5</figcaption>
+              </figure>
+            </div>
+            <div class="bikes__card">
+              <figure class="bikes__bike-photo">
+                <img src="./images/bikes/Cannondale-Systemsix-Himod.jpg" alt="Cannondale Systemsix Himod"
+                  class="bikes__card-image">
+                <figcaption class="bikes__card-title">Cannondale Systemsix Himod</figcaption>
+              </figure>
+            </div>
+            <div class="bikes__card">
+              <figure class="bikes__bike-photo">
+                <img src="./images/bikes/Trek-Domane-SL-7.jpg" alt="Trek-Domane-SL-7" class="bikes__card-image">
+                <figcaption class="bikes__card-title">Trek-Domane-SL-7</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="bikes__gravel">
+            <div class="bikes__card">
+              <figure class="bikes__bike-photo">
+                <img src="./images/bikes/Cervelo-Aspero-GRX-810.jpg" alt="Cervelo Aspero GRX 810"
+                  class="bikes__card-image">
+                <figcaption class="bikes__card-title">Cervelo Aspero GRX 810</figcaption>
+              </figure>
+            </div>
+            <div class="bikes__card">
+              <figure class="bikes__bike-photo">
+                <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Specialized S-Works Diverge"
+                  class="bikes__card-image">
+                <figcaption class="bikes__card-title">Specialized S-Works Diverge</figcaption>
+              </figure>
+            </div>
+            <div class="bikes__card">
+              <figure class="bikes__bike-photo">
+                <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Cannondale Topstone Lefty 3"
+                  class="bikes__card-image">
+                <figcaption class="bikes__card-title">Cannondale Topstone Lefty 3</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="bikes__tt">
+            <div class="bikes__card">
+              <figure class="bikes__bike-photo">
+                <img src="./images/bikes/Specialized-S-Works-Shiv.jpg" alt="Specialized S-Works Shiv"
+                  class="bikes__card-image">
+                <figcaption class="bikes__card-title">Specialized S-Works Shiv</figcaption>
+              </figure>
+            </div>
+            <div class="bikes__card">
+              <figure class="bikes__bike-photo">
+                <img src="./images/bikes/BMC-Timemachine-01-ONE.jpg" alt="BMC Timemachine 01 ONE"
+                  class="bikes__card-image">
+                <figcaption class="bikes__card-title">BMC Timemachine 01 ONE</figcaption>
+              </figure>
+            </div>
+            <div class="bikes__card">
+              <figure class="bikes__bike-photo">
+                <img src="./images/bikes/Cervelo P-Series.jpg" alt="Cervelo P-Series" class="bikes__card-image">
+                <figcaption class="bikes__card-title">Cervelo P-Series</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div> -->
+      </section>
+
+      <section class="training" id="training">
+        <div class="training__content">
+          <h2 class="training__title">Тренировки</h2>
+          <div class="training__media-mobile">
+            <img src="./images/training-bg.jpeg" alt="Тренировки" class="training__image" />
+          </div>
+          <p class="training__text">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а
+            записать эти тренировки поможет приложение Strava, а также это приложение позволит построить тренировочный
+            план.</p>
+          <ul class="training__apps">
+            <li class="training__list-item">
+              <a href="https://www.komoot.com" class="training__link">Komoot</a>
+            </li>
+            <li class="training__list-item">
+              <a href="https://www.strava.com" class="training__link">Strava</a>
+            </li>
+          </ul>
+        </div>
+        <div class="training__media-desktop">
+          <img src="./images/training-bg.jpeg" alt="Тренировки" class="training__image" />
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <h2 class="footer__title">Подпишитесь на рассылку &mdash;</h2>
+        <form class="form">
+          <input type="email" class="form__field" id="mailing" placeholder="Ваш e-mail" onkeyup="handleInput(this)" />
+          <!-- submit сделан абсолютом -->
+          <button type="submit" class="form__btn-submit form__btn-submit_hidden">ok</button>
+        </form>
+        <p class="footer__copyright">&copy; Руслан Кулиш 2021</p>
+      </div>
+      <div class="footer__logo"></div>
+    </footer>
+  </div>
+
+  <template id="slider-content">
+    <div class="surface-slider__content">
+      <h2 class="surface-slider__title"></h2>
+      <p class="surface-slider__text"></p>
+    </div>
+  </template>
+
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>

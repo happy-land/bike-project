@@ -1,0 +1,148 @@
+.surface-slider {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 0 60px 120px;
+  font-family: "Inter", Arial, sans-serif;
+
+  @media screen and (max-width: $mobile-width) {
+    position: relative;
+    padding: 40px 0 40px;
+  }
+
+  &__content-container {
+    @media screen and (max-width: $mobile-width) {
+      border: 1px solid red;
+      margin: 0 auto;
+      width: calc(100% - 2*18px);
+    }
+  }
+
+  &__content {
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__title {
+    // border: 1px solid red;
+    margin: 0 0 50px;
+    padding: 0;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 60px;
+    letter-spacing: -0.5px;
+    color: $text-color-title;
+
+    @media screen and (max-width: $mobile-width) {
+      // border: 1px solid red;
+      order: 1;
+      width: calc(100% - 2 * 18px);
+      border-top: 1px solid #e3e3e3;
+      margin: 0px auto 40px;
+      padding-top: 40px;
+
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  &__text {
+    width: 460px;
+    margin: 0 0 80px;
+    padding: 0;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: $text-color-text;
+    opacity: 0.7;
+
+    @media screen and (max-width: $mobile-width) {
+      order: 3;
+      width: calc(100% - 2 * 18px);
+      margin: 40px auto 40px;
+
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__media {
+    margin: 0 0 50px;
+
+    @media screen and (max-width: $mobile-width) {
+      order: 2;
+      width: calc(100% - 2 * 18px);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+  }
+
+  &__media-container {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__image {
+    margin: 0;
+    padding: 0;
+    margin-right: 40px;
+
+    @media screen and (max-width: $mobile-width) {
+      width: 100%;
+    }
+  }
+
+  &__action-area {
+    // border: 1px solid red;
+    @media screen and (max-width: $mobile-width) {
+      position: absolute;
+      right: 18px;
+      top: 87px;
+    }
+  }
+
+  &__btn {
+    border: 0;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    background-color: #ebebeb;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: opacity 0.1s ease-in;
+
+    @media screen and (max-width: $mobile-width) {
+      border-radius: 30px;
+      width: 24px;
+      height: 24px;
+      margin-right: 20px;
+    }
+  }
+
+  &__btn:last-child {
+    margin-right: 0;
+  }
+
+  &__btn:hover {
+    opacity: 0.6;
+  }
+
+  &__btn-left {
+    background-image: url(../../images/arrow-left.svg);
+  }
+
+  &__btn-right {
+    background-image: url(../../images/arrow-right.svg);
+  }
+}

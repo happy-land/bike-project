@@ -1,0 +1,123 @@
+.training {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 150px 120px 120px;
+  font-family: "Inter", Arial, sans-serif;
+
+  @media screen and (max-width: $mobile-width) {
+    padding: 40px 0px 60px;
+  }
+
+  // &__content {
+  // }
+
+  &__title {
+    width: 460px;
+    padding: 0;
+    margin: 40px 0 50px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 60px;
+    letter-spacing: -0.5px;
+    color: #151515;
+
+    @media screen and (max-width: $mobile-width) {
+      border-top: 1px solid #E3E3E3;
+      padding-top: 40px;
+      width: calc(100% - 2 * 18px);
+      margin: 0 auto;
+
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  &__text {
+    width: 460px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: $text-color-text;
+    opacity: 0.7;
+
+    @media screen and (max-width: $mobile-width) {
+      width: calc(100% - 2 * 18px);
+      margin: 0 auto;
+
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__apps {
+    display: flex;
+    margin: 182px 0 0;
+    padding: 0;
+    list-style-type: none;
+
+    @media screen and (max-width: $mobile-width) {
+      width: calc(100% - 2 * 18px);
+      margin: 40px auto 0;
+    }
+  }
+
+  &__list-item {
+    margin: 0;
+    padding: 0;
+    margin-right: 30px;
+  }
+
+  &__list-item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: $text-color-title;
+    transition: opacity 0.1s ease-in;
+
+    @media screen and (max-width: $mobile-width) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__link:hover {
+    opacity: 0.75;
+  }
+
+  &__media-desktop {
+    border: 1px solid red;
+    width: 580px;
+    height: 460px;
+
+    @media screen and (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+  &__media-mobile {
+    display: none;
+
+    @media screen and (max-width: $mobile-width) {
+      display: block;
+      max-width: 580px;
+      width: calc(100% - 2 * 18px);
+      margin: 40px auto 40px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
