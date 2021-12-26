@@ -4,7 +4,7 @@
   justify-content: space-between;
   box-sizing: border-box;
   width: 100%;
-  margin: 0 auto;
+  // margin: 0 auto;
   padding-left: 120px;
 
   @media screen and (max-width: $mobile-width) {
@@ -21,7 +21,7 @@
 
   &__title {
     // border: 1px solid grey;
-    margin: 80px 0 50px;
+    margin: 66px 0 50px;
     padding: 0;
     width: 460px;
 
