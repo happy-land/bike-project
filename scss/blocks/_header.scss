@@ -1,16 +1,17 @@
 .header {
+  // border: 1px solid red;
   font-family: $font-family;
+  width: 100%;
   position: fixed;
   right: 0;
-  inset: 0;
-  z-index: 10;
+  z-index: 2;
   
 
   &__container {
-    // border: 1px solid red;
     display: flex;
     max-width: 1440px;
     min-width: 320px;
+    
     margin: 0 auto;
     background-color: $bg-color-container;
   }
