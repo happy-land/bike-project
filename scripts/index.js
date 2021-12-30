@@ -1,150 +1,84 @@
-// link -> src="./images/surface-road.jpeg"
 const sliderData = [
   {
     title: 'Шоссе',
     text: 'На шоссейном велосипеде можно ездить по асфальту на разных градиентах: будь то горы или равнины. Гонки проходят в командном пелотоне, но тренироваться можно и самостоятельно.',
-    link: 'surface-road.jpeg',
-    alt: 'Шоссе'
+    images: [
+      { link: './images/surface-road.jpeg', alt: 'Покрытие-шоссе' },
+      { link: './images/surface-gravel.jpeg', alt: 'Покрытие-легкое бездорожье' }
+    ],
   },
   {
     title: 'Грэвел',
     text: 'Грэвел похож на шоссейный велосипед, но конструкция рамы немного отличается, и на нём стоят более широкие покрышки, всё для того чтобы проехать по лёгкому бездорожью.',
-    link: 'surface-gravel.jpeg',
-    alt: 'Грэвел'
+    images: [
+      { link: './images/surface-gravel.jpeg', alt: 'Покрытие-легкое бездорожье' },
+      { link: './images/surface-tt.jpeg', alt: 'Покрытие-ровный асфальт' }
+    ],
   },
   {
     title: 'ТТ',
     text: 'ТТ — это велосипед для триатлона или раздельного старта, гооняют на таком велике только по равнинному асфальту, велик очень быстрые и аэродинамичный.',
-    link: 'surface-tt.jpeg',
-    alt: 'Триатлон (ТТ)'
+    images: [
+      { link: './images/surface-tt.jpeg', alt: 'Покрытие-ровный асфальт' },
+      { link: './images/surface-road.jpeg', alt: 'Покрытие-шоссе' }
+    ],
   }
 ];
 
-const form = document.querySelector('form');
-const emailInput = form.querySelector('#mailing');
-const submitButton = form.querySelector('.form__btn-submit');
-
-
 // слайдер
-// Слайдер - управление текстом
 
-const sliderElement = document.querySelector('#surface-slider');
-const sliderContentContainer = sliderElement.querySelector('.surface-slider__content-container');
-const sliderContentTemplate = document.querySelector('#slider-content').content;
+const surfaceSlider = document.querySelector('#surface-slider');
 
-const sliderContentElement = sliderElement.querySelector('.surface-slider__content');
-const sliderMediaElement = sliderElement.querySelector('.surface-slider__media');
-const sliderMediaContainer = sliderMediaElement.querySelector('.surface-slider__media-container');
+const surfaceSliderTitle = surfaceSlider.querySelector('.surface-slider__title');
+const surfaceSliderText = surfaceSlider.querySelector('.surface-slider__text');
 
+const surfaceSliderFirstImage = surfaceSlider.querySelector('.surface-slider__image-first');
+const surfaceSliderSecondImage = surfaceSlider.querySelector('.surface-slider__image-second');
 
-// Старая версия - с контейнерами
-
-const createSlideContent = (slideTitle, slideText, slideLink, slideAlt) => {
-  const contentElement = sliderContentTemplate.querySelector('.surface-slider__content').cloneNode(true);
-  const title = contentElement.querySelector('.surface-slider__title');
-  const text = contentElement.querySelector('.surface-slider__text');
-
-  title.textContent = slideTitle;
-  text.textContent = slideText;
-
-  return contentElement;
-}
-
-const toggleSlideContentVisibility = (element) => {
-  element.classList.toggle('surface-slider__content_hidden');
-}
-
-const renderSlideContent = (element) => {
-  sliderContentContainer.append(element);
-}
-
-let currentSlide = 0;
-// добавить в DOM заголовок и текст всех слайдов
-const slides = [];
-sliderData.forEach(slide => {
-  const slideContent = createSlideContent(slide.title, slide.text);
-  slides.push(slideContent);
-  renderSlideContent(slideContent);
-  toggleSlideContentVisibility(slideContent); // скрыть все слайды
-});
-
-toggleSlideContentVisibility(slides[currentSlide]);
-
-
-// Слайдер - управление картинками
-
-
-const slideImages = sliderMediaContainer.querySelectorAll('.surface-slider__image');
 const sliderLeftButton = document.querySelector('.surface-slider__btn-left');
 const sliderRightButton = document.querySelector('.surface-slider__btn-right');
 
+let currentSlide = 0;
 
-let slideCounter = 0;
-
-const changeSlideText = (currentSlide, direction) => {
-  toggleSlideContentVisibility(slides[currentSlide]);
+const changeSlide = (currentSlide, direction) => {
   currentSlide += direction;
   if (currentSlide === -1) {
-    currentSlide = slides.length - 1;
+    currentSlide = sliderData.length - 1;
   }
-  if (currentSlide >= slides.length) {
+  if (currentSlide >= sliderData.length) {
     currentSlide = 0;
   }
-  toggleSlideContentVisibility(slides[currentSlide]);
+
+  surfaceSliderTitle.textContent = sliderData[currentSlide].title;
+  surfaceSliderText.textContent = sliderData[currentSlide].text;
+  surfaceSliderFirstImage.src = sliderData[currentSlide].images[0].link;
+  surfaceSliderFirstImage.alt = sliderData[currentSlide].images[0].alt;
+  surfaceSliderSecondImage.src = sliderData[currentSlide].images[1].link;
+  surfaceSliderSecondImage.alt = sliderData[currentSlide].images[1].alt;
+
   return currentSlide;
 }
 
-const listItems = sliderMediaContainer.children;
-
-const moveImages = (direction) => {
-  // сдвинуть все картинки влево
-  slideImages.forEach(slide => {
-    const animation = slide.animate([
-      { transform: 'translate(0)' },
-      { transform: `translate(${-700 * direction}px, 0)` }
-    ], {
-      duration: 400,
-      easing: 'ease-out'
-    });
-    animation.addEventListener('finish', () => {
-      // затем переместить первый элемент в конец списка
-      if (direction === 1) {
-        sliderMediaContainer.append(listItems[0]);
-      } else {
-        sliderMediaContainer.prepend(listItems[2]);
-      }
-
-      slide.style.transform = `translate(${-700 * direction}px, 0)`;
-    });
-  })
-
-  if (direction === 1) {
-    if (slideCounter !== 0) {
-      sliderMediaContainer.append(listItems[0]);
-    }
-  } else {
-    sliderMediaContainer.prepend(listItems[0]);
-  }
-
-  slideCounter++;
-}
 
 sliderRightButton.addEventListener('click', () => {
-  currentSlide = changeSlideText(currentSlide, 1);
-  moveImages(1);
+  currentSlide = changeSlide(currentSlide, 1);
 });
 
 sliderLeftButton.addEventListener('click', () => {
-  currentSlide = changeSlideText(currentSlide, -1);
-  moveImages(-1);
+  currentSlide = changeSlide(currentSlide, -1);
 });
-
 
 
 
 
 
 // Форма - эл. почта
+
+const form = document.querySelector('form');
+const emailInput = form.querySelector('#mailing');
+const submitButton = form.querySelector('.form__btn-submit');
+
+
 const handleInput = (target) => {
   // console.log(target.parentElement);
 
