@@ -5,13 +5,12 @@
   position: fixed;
   right: 0;
   z-index: 2;
-  
 
   &__container {
     display: flex;
     max-width: 1440px;
     min-width: 320px;
-    
+    align-items: center;
     margin: 0 auto;
     background-color: $bg-color-container;
   }
@@ -22,9 +21,6 @@
     justify-content: end;
     margin: 28px 125px 28px auto; // по макету 120px
     // flex: 1;
-    @media screen and (max-width: $mobile-width) {
-      display: none;
-    }
   }
 
   &__link-list {
@@ -60,9 +56,77 @@
     background-image: url(../../images/header-burger-icon.svg);
     background-repeat: no-repeat;
     background-position: center;
+  }
 
-    @media screen and (max-width: $mobile-width) {
+  &__close-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .header {
+    // border: 1px solid red;
+
+    &__container {
+      flex-direction: column;
+
+      &_type_mobile {
+        height: 100vh;
+      }
+    }
+
+    &__nav-bar {
+      display: none;
+
+      &_type_mobile {
+        // border: 1px solid red;
+        display: flex;
+        margin: 64px auto 0;
+      }
+    }
+
+    &__link-list {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &__list-item {
+      margin: 0 0 32px 0;
+      text-align: center;
+    }
+
+    &__list-item:last-child {
+      margin: 0;
+    }
+
+    &__link {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    &__burger-button {
       display: block;
+      cursor: pointer;
+
+      &_hidden {
+        display: none;
+      }
+    }
+
+    &__close-button {
+      display: block;
+      border: 0;
+      width: 32px;
+      height: 32px;
+      margin: 20px 15px 30px auto;
+      background-image: url(../../images/header-close-icon.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+
+      &_hidden {
+        display: none;
+      }
     }
   }
 }

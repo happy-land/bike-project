@@ -7,13 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Катайся</title>
   <link rel="stylesheet" href="./pages/index.css" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
 <body class="container">
   <div class="page">
     <header class="header">
       <div class="header__container">
+        <!-- бургер -->
+        <button type="button" class="header__burger-button"></button>
+        <button type="button" class="header__close-button header__close-button_hidden"></button>
         <nav class="header__nav-bar">
           <ul class="header__link-list">
             <li class="header__list-item">
@@ -27,8 +29,9 @@
             </li>
           </ul>
         </nav>
-        <!-- бургер -->
-        <button type="button" class="header__burger-button"></button>
+        
+        
+        <div class="header__mobile-menu"></div>
       </div>
     </header>
     <main class="content">
@@ -296,7 +299,6 @@
     </footer>
   </div>
 
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 
