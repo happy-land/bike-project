@@ -1,3 +1,30 @@
+// мобильное меню
+const mobileMenuHeaderContainer = document.querySelector('.header__container');
+
+const mobileMenuOpenButton = document.querySelector('.header__burger-button');
+const mobileMenuCloseButton = document.querySelector('.header__close-button');
+
+const mobileMenuNav = document.querySelector('.header__nav-bar');
+
+const toggleHeader = () => {
+  mobileMenuHeaderContainer.classList.toggle('header__container_type_mobile');
+  mobileMenuOpenButton.classList.toggle('header__burger-button_hidden');
+  mobileMenuCloseButton.classList.toggle('header__close-button_hidden');
+  mobileMenuNav.classList.toggle('header__nav-bar_type_mobile');
+}
+
+const openMobileMenu = () => {
+  toggleHeader();
+};
+
+const closeMobileMenu = () => {
+  toggleHeader();
+};
+
+mobileMenuOpenButton.addEventListener('click', () => openMobileMenu());
+mobileMenuCloseButton.addEventListener('click', () => closeMobileMenu());
+
+// слайдер
 const sliderData = [
   {
     title: 'Шоссе',
@@ -25,7 +52,6 @@ const sliderData = [
   }
 ];
 
-// слайдер
 
 const surfaceSlider = document.querySelector('#surface-slider');
 
@@ -93,24 +119,4 @@ const handleInput = (target) => {
 submitButton.addEventListener('click', (event) => {
   event.preventDefault();
   emailInput.value = 'Круто!'
-});
-
-
-
-// Swiper
-const swiper = new Swiper(".bikes__slider", {
-  pagination: {
-    el: ".swiper-pagination",
-    // breakpoints: {
-    //   1440: {
-    //     slidesPerView: 3,
-    //     spaceBetween: 80,
-    //   },
-    //   950: {
-    //     centeredSlides: true,
-    //     slidesPerView: 1,
-    //     spaceBetween: 80,
-    //   },
-    // },
-  }
 });
