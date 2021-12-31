@@ -29,8 +29,8 @@
             </li>
           </ul>
         </nav>
-        
-        
+
+
         <div class="header__mobile-menu"></div>
       </div>
     </header>
@@ -74,16 +74,6 @@
           <img src="./images/surface-gravel.jpeg" alt="Грэвэл" class="surface-slider__image-second" />
         </div>
 
-
-
-        <!-- <div class="surface-slider__media">
-          <div class="surface-slider__media-container">
-            <img src="./images/surface-road.jpeg" alt="Шоссе" class="surface-slider__image" />
-            <img src="./images/surface-gravel.jpeg" alt="Грэвэл" class="surface-slider__image" />
-            <img src="./images/surface-tt.jpeg" alt="Триатлон (ТТ)" class="surface-slider__image" />
-          </div>
-        </div> -->
-
         <div class="surface-slider__action-area">
           <button type="button" class="surface-slider__btn surface-slider__btn-left"></button>
           <button type="button" class="surface-slider__btn surface-slider__btn-right"></button>
@@ -94,171 +84,28 @@
         <h2 class="bikes__title">Велосипеды</h2>
         <nav class="bikes__nav-bar">
           <ul class="bikes__link-list">
-            <li class="bikes__list-item">
-              <a href="#" class="bikes__link bikes__link_active">Шоссе</a>
+            <li class="bikes__list-item bikes__list-item_active" id="road">
+              Шоссе
             </li>
-            <li class="bikes__list-item">
-              <a href="#" class="bikes__link">Грэвел</a>
+            <li class="bikes__list-item" id="gravel">
+              Грэвел
             </li>
-            <li class="bikes__list-item">
-              <a href="#" class="bikes__link">TT</a>
+            <li class="bikes__list-item" id="tt">
+              TT
             </li>
           </ul>
         </nav>
 
-        <!-- Слайдер -->
-        <div class="bikes__slider">
-          <div class="bikes__list swiper-wrapper">
+        <select class="bikes__select">
+          <option class="bikes__option" value="road" selected>Шоссе</option>
+          <option class="bikes__option" value="gravel">Грэвел</option>
+          <option class="bikes__option" value="tt">ТТ</option>
+        </select>
 
-            <!-- Шоссе слайд -->
-            <div class="bikes__road swiper-slide">
-              <div class="bikes__card">
-                <figure class="bikes__bike-photo">
-                  <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Cervelo-Caledonia-5"
-                    class="bikes__card-image">
-                  <figcaption class="bikes__card-title">Cervelo Caledonia-5</figcaption>
-                </figure>
-              </div>
-              <div class="bikes__card">
-                <figure class="bikes__bike-photo">
-                  <img src="./images/bikes/Cannondale-Systemsix-Himod.jpg" alt="Cannondale Systemsix Himod"
-                    class="bikes__card-image">
-                  <figcaption class="bikes__card-title">Cannondale Systemsix Himod</figcaption>
-                </figure>
-              </div>
-              <div class="bikes__card">
-                <figure class="bikes__bike-photo">
-                  <img src="./images/bikes/Trek-Domane-SL-7.jpg" alt="Trek-Domane-SL-7" class="bikes__card-image">
-                  <figcaption class="bikes__card-title">Trek-Domane-SL-7</figcaption>
-                </figure>
-              </div>
-            </div>
+        <ul class="bikes__media"></ul>
 
-            <!-- Грэвел слайд -->
-            <div class="bikes__gravel swiper-slide">
-              <div class="bikes__card">
-                <figure class="bikes__bike-photo">
-                  <img src="./images/bikes/Cervelo-Aspero-GRX-810.jpg" alt="Cervelo Aspero GRX 810"
-                    class="bikes__card-image">
-                  <figcaption class="bikes__card-title">Cervelo Aspero GRX 810</figcaption>
-                </figure>
-              </div>
-              <div class="bikes__card">
-                <figure class="bikes__bike-photo">
-                  <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Specialized S-Works Diverge"
-                    class="bikes__card-image">
-                  <figcaption class="bikes__card-title">Specialized S-Works Diverge</figcaption>
-                </figure>
-              </div>
-              <div class="bikes__card">
-                <figure class="bikes__bike-photo">
-                  <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Cannondale Topstone Lefty 3"
-                    class="bikes__card-image">
-                  <figcaption class="bikes__card-title">Cannondale Topstone Lefty 3</figcaption>
-                </figure>
-              </div>
-            </div>
-
-            <!-- ТТ слайд -->
-            <div class="bikes__tt swiper-slide">
-              <div class="bikes__card">
-                <figure class="bikes__bike-photo">
-                  <img src="./images/bikes/Specialized-S-Works-Shiv.jpg" alt="Specialized S-Works Shiv"
-                    class="bikes__card-image">
-                  <figcaption class="bikes__card-title">Specialized S-Works Shiv</figcaption>
-                </figure>
-              </div>
-              <div class="bikes__card">
-                <figure class="bikes__bike-photo">
-                  <img src="./images/bikes/BMC-Timemachine-01-ONE.jpg" alt="BMC Timemachine 01 ONE"
-                    class="bikes__card-image">
-                  <figcaption class="bikes__card-title">BMC Timemachine 01 ONE</figcaption>
-                </figure>
-              </div>
-              <div class="bikes__card">
-                <figure class="bikes__bike-photo">
-                  <img src="./images/bikes/Cervelo P-Series.jpg" alt="Cervelo P-Series" class="bikes__card-image">
-                  <figcaption class="bikes__card-title">Cervelo P-Series</figcaption>
-                </figure>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-pagination"></div>
-
-          <!-- <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div> -->
-
-
-
-          <!-- <div class="bikes__cards">
-          <div class="bikes__road">
-            <div class="bikes__card">
-              <figure class="bikes__bike-photo">
-                <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Cervelo-Caledonia-5" class="bikes__card-image">
-                <figcaption class="bikes__card-title">Cervelo Caledonia-5</figcaption>
-              </figure>
-            </div>
-            <div class="bikes__card">
-              <figure class="bikes__bike-photo">
-                <img src="./images/bikes/Cannondale-Systemsix-Himod.jpg" alt="Cannondale Systemsix Himod"
-                  class="bikes__card-image">
-                <figcaption class="bikes__card-title">Cannondale Systemsix Himod</figcaption>
-              </figure>
-            </div>
-            <div class="bikes__card">
-              <figure class="bikes__bike-photo">
-                <img src="./images/bikes/Trek-Domane-SL-7.jpg" alt="Trek-Domane-SL-7" class="bikes__card-image">
-                <figcaption class="bikes__card-title">Trek-Domane-SL-7</figcaption>
-              </figure>
-            </div>
-          </div>
-          <div class="bikes__gravel">
-            <div class="bikes__card">
-              <figure class="bikes__bike-photo">
-                <img src="./images/bikes/Cervelo-Aspero-GRX-810.jpg" alt="Cervelo Aspero GRX 810"
-                  class="bikes__card-image">
-                <figcaption class="bikes__card-title">Cervelo Aspero GRX 810</figcaption>
-              </figure>
-            </div>
-            <div class="bikes__card">
-              <figure class="bikes__bike-photo">
-                <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Specialized S-Works Diverge"
-                  class="bikes__card-image">
-                <figcaption class="bikes__card-title">Specialized S-Works Diverge</figcaption>
-              </figure>
-            </div>
-            <div class="bikes__card">
-              <figure class="bikes__bike-photo">
-                <img src="./images/bikes/Cervelo-Caledonia-5.jpeg" alt="Cannondale Topstone Lefty 3"
-                  class="bikes__card-image">
-                <figcaption class="bikes__card-title">Cannondale Topstone Lefty 3</figcaption>
-              </figure>
-            </div>
-          </div>
-          <div class="bikes__tt">
-            <div class="bikes__card">
-              <figure class="bikes__bike-photo">
-                <img src="./images/bikes/Specialized-S-Works-Shiv.jpg" alt="Specialized S-Works Shiv"
-                  class="bikes__card-image">
-                <figcaption class="bikes__card-title">Specialized S-Works Shiv</figcaption>
-              </figure>
-            </div>
-            <div class="bikes__card">
-              <figure class="bikes__bike-photo">
-                <img src="./images/bikes/BMC-Timemachine-01-ONE.jpg" alt="BMC Timemachine 01 ONE"
-                  class="bikes__card-image">
-                <figcaption class="bikes__card-title">BMC Timemachine 01 ONE</figcaption>
-              </figure>
-            </div>
-            <div class="bikes__card">
-              <figure class="bikes__bike-photo">
-                <img src="./images/bikes/Cervelo P-Series.jpg" alt="Cervelo P-Series" class="bikes__card-image">
-                <figcaption class="bikes__card-title">Cervelo P-Series</figcaption>
-              </figure>
-            </div>
-          </div>
-        </div> -->
+        <!-- Переключатели для моб. версии -->
+        <ul class="bikes__toggle-container"></ul>
       </section>
 
       <section class="training" id="training">
@@ -298,6 +145,18 @@
       <div class="footer__logo"></div>
     </footer>
   </div>
+
+  <!-- Шаблон карточки велосипеда -->
+  <template id="bike-template">
+    <li class="bikes__card">
+      <a class="bikes__card-link">
+        <figure class="bikes__bike-photo">
+          <img src="./images/bikes/BMC-Timemachine-01-ONE.jpg" alt="BMC Timemachine 01 ONE" class="bikes__card-image">
+          <figcaption class="bikes__card-title">BMC Timemachine 01 ONE</figcaption>
+        </figure>
+      </a>
+    </li>
+  </template>
 
   <script src="./scripts/index.js"></script>
 </body>

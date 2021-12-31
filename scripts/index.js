@@ -96,6 +96,215 @@ sliderLeftButton.addEventListener('click', () => {
 
 
 
+// Секция bikes  ******************
+
+
+const bikesData = [
+  {
+    type: 'road',
+    items: [
+      {
+        title: 'Cervelo Caledonia-5',
+        image: './images/bikes/Cervelo-Caledonia-5.jpeg',
+        link: 'https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN'
+      },
+      {
+        title: 'Cannondale Systemsix Himod',
+        image: './images/bikes/Cannondale-Systemsix-Himod.jpg',
+        link: 'https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J'
+      },
+      {
+        title: 'Trek-Domane-SL-7',
+        image: './images/bikes/Trek-Domane-SL-7.jpg',
+        link: 'https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF'
+      }
+    ]
+  },
+  {
+    type: 'gravel',
+    items: [
+      {
+        title: 'Cervelo Aspero GRX 810',
+        image: './images/bikes/Cervelo-Aspero-GRX-810.jpg',
+        link: 'https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE'
+      },
+      {
+        title: 'Specialized S-Works Diverge',
+        image: './images/bikes/Specialized-S-Works-Diverge.jpg',
+        link: 'https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9'
+      },
+      {
+        title: 'Cannondale Topstone Lefty 3',
+        image: './images/bikes/Cannondale-Topstone-Lefty-3.jpg',
+        link: 'https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8'
+      }
+    ]
+  },
+  {
+    type: 'tt',
+    items: [
+      {
+        title: 'Specialized S-Works Shiv',
+        image: './images/bikes/Specialized-S-Works-Shiv.jpg',
+        link: 'https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9'
+      },
+      {
+        title: 'BMC Timemachine 01 ONE',
+        image: './images/bikes/BMC-Timemachine-01-ONE.jpg',
+        link: 'https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835'
+      },
+      {
+        title: 'Cervelo P-Series',
+        image: './images/bikes/Cervelo P-Series.jpg',
+        link: 'https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q'
+      }
+    ]
+  }
+];
+
+// Шаблон карточки - берем из html
+const bikeTemplate = document.querySelector('#bike-template').content;
+
+// ul - элемент - список велосипедов
+const bikeMedia = document.querySelector('.bikes__media');
+
+// select в моб. версии
+const bikeSelect = document.querySelector('.bikes__select');
+
+// переключатель велосипедов в моб. версии
+const toggleContainer = document.querySelector('.bikes__toggle-container');
+
+bikeSelect.addEventListener('change', () => toggleBikeGroupMobile());
+
+
+// десктоп
+const bikeList = document.querySelectorAll('.bikes__list-item');
+console.log('bikeList: ' + bikeList);
+bikeList.forEach(bikeGroup => {
+  console.log('bikeGropu = -===' + bikeGroup);
+  bikeGroup.addEventListener('click', () => {
+    toggleBikeGroupDesktop(bikeGroup.id);
+  });
+});
+
+// функция переключает карточки в десктопной версии
+const toggleBikeGroupDesktop = (id) => {
+  const bikeType = id;
+  console.log(bikeType);
+  const selectedGroup = bikesData.filter(group => group.type == bikeType);
+  // console.log('selectedGroup = ' + selectedGroup[0].items);
+
+  // очистить bikeMedia
+  bikeMedia.innerHTML = '';
+
+  // переключить в навигационной панели блока активную ссылку
+  bikeList.forEach(element => {
+    if (element.id === id) {
+      element.classList.add('bikes__list-item_active');
+    } else {
+      element.classList.remove('bikes__list-item_active');
+    }
+  });
+
+  // связать значение селекта
+  // с выбранным значением навигационной панели десктопной версии
+  bikeSelect.value = id;
+
+  selectedGroup[0].items.forEach(bike => {
+    // console.log('bike: ' + bike.title);
+    // создать карточку
+    const createdCard = createCard(bike.title, bike.image, bike.link);
+    renderCard(createdCard);
+  });
+}
+
+
+// функция создает карточку
+const createCard = (cardTitle, cardImage, cardLink) => {
+  const element = bikeTemplate.querySelector('.bikes__card').cloneNode(true);
+  const title = element.querySelector('.bikes__card-title');
+  const image = element.querySelector('.bikes__card-image');
+  const link = element.querySelector('.bikes__card-link');
+
+  title.textContent = cardTitle;
+  image.src = cardImage;
+  image.alt = cardTitle;
+  link.href = cardLink;
+
+  // навесить обработчики
+  // setEventListeners(element, cardTitle, cardUrl);
+
+  return element;
+}
+
+const renderCard = (card) => {
+  bikeMedia.append(card);
+}
+
+// функция переключает велосипед в мобильной версии
+const toggleBikeGroupMobile = (index = 0) => {
+  toggleContainer.innerHTML = '';
+  const bikeType = bikeSelect.value;
+  // найти в bikeData объект со св-вом type = bikeType (gravel)
+  const selectedGroup = bikesData.filter(group => group.type == bikeType);
+  // console.log('Group = ' + selectedGroup[0].items[0].title);
+
+  // создать карточку
+  const card = {
+    title: selectedGroup[0].items[index].title,
+    image: selectedGroup[0].items[index].image,
+    link: selectedGroup[0].items[index].link
+
+  };
+  const createdCard = createCard(card.title, card.image, card.title);
+
+  // очистить bikeMedia
+  bikeMedia.innerHTML = '';
+
+  renderCard(createdCard);
+  renderTogglers(selectedGroup[0].items, index);
+}
+
+// функция создает кружочки-переключатели велосипедов в моб. версии
+const renderTogglers = (items, index) => {
+  items.forEach((item, i) => {
+    const toggler = document.createElement('li');
+    toggler.classList.add('bikes__toggle');
+    if (i === index) {
+      toggler.classList.toggle('bikes__toggle_active');
+    }
+
+    // добавить li в DOM
+    toggleContainer.appendChild(toggler);
+
+    // навесить обработчик клика на переключатель
+    toggler.addEventListener('click', () => {
+      toggleBikeGroupMobile(i);
+    });
+  });
+}
+
+
+const breakpoint = 1060;
+
+window.addEventListener('resize', () => {
+  console.log(window.innerWidth);
+  if (window.innerWidth >= breakpoint) {
+    // показать 3 карточки в десктопной версии
+    toggleBikeGroupDesktop(bikeSelect.value);
+  } else {
+    // показать начальную карточку в моб. версии
+    toggleBikeGroupMobile(0);
+  }
+});
+
+if (window.innerWidth >= breakpoint) {
+  toggleBikeGroupDesktop('road');
+} else {
+  toggleBikeGroupMobile(0);
+}
+
+
 
 
 // Форма - эл. почта
