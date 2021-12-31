@@ -42,7 +42,6 @@
   }
 
   &__media-container {
-    border: 1px solid green;
     display: flex;
     margin: 0 0 50px;
     overflow: hidden;
@@ -57,6 +56,11 @@
   &__image-second {
     object-fit: contain;
     max-width: 100%;
+  }
+
+  &__action-area {
+    position: static;
+    
   }
 
   &__btn {
@@ -92,7 +96,7 @@
 @media screen and (max-width: $mobile-width) {
   .surface-slider {
     position: relative;
-    padding: 40px 0 40px;
+    padding: 0 0 40px;
 
     &__title {
       order: 1;
@@ -108,7 +112,7 @@
     &__text {
       order: 3;
       width: calc(100% - 2 * 18px);
-      margin: 40px auto 40px;
+      margin: 40px auto 0px;
 
       font-size: 12px;
       line-height: 18px;
@@ -131,8 +135,8 @@
 
     &__action-area {
       position: absolute;
-      right: 18px;
-      top: 87px;
+      right: 17px;
+      top: 46px;
     }
 
     &__btn {

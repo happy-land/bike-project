@@ -1,5 +1,4 @@
 .bikes {
-  // border: 1px solid red;
   font-family: $font-family;
   display: flex;
   flex-direction: column;
@@ -7,13 +6,9 @@
   box-sizing: border-box;
   width: 100%;
   margin: 0 auto;
-  padding: 60px 120px;
+  padding: 60px 120px 104px;
 
   position: relative;
-
-  @media screen and (max-width: $mobile-width) {
-    padding: 40px 0;
-  }
 
   &__title {
     margin: 0 0 54px;
@@ -23,28 +18,13 @@
     line-height: 60px;
     letter-spacing: -0.5px;
     color: $text-color-title;
-
-    @media screen and (max-width: $mobile-width) {
-      border-top: 1px solid #e3e3e3;
-      padding-top: 40px;
-      margin: 0 auto;
-      width: calc(100% - 2 * 18px);
-
-      font-size: 32px;
-      line-height: 40px;
-    }
   }
 
   &__nav-bar {
-    // border: 1px solid red;
     display: flex;
     position: absolute;
     top: 92px;
     right: 120px;
-
-    @media screen and (max-width: $mobile-width) {
-      display: none;
-    }
   }
 
   &__link-list {
@@ -55,23 +35,15 @@
   }
 
   &__list-item {
-    // border: 1px solid red;
     margin: 0;
     padding: 0;
     margin-right: 34px;
-  }
-
-  &__list-item:last-child {
-    margin-right: 0;
-  }
-
-  &__link {
-    text-decoration: none;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 28px;
     color: $text-color-text;
+    cursor: pointer;
     opacity: 0.7;
     transition: opacity 0.1s ease-in;
 
@@ -86,77 +58,165 @@
       opacity: 0.75;
     }
   }
-  &__link:hover {
+
+  &__list-item:last-child {
+    margin-right: 0;
+  }
+
+  &__list-item:hover {
     opacity: 0.6;
   }
 
-  &__slider {
-    overflow: hidden;
+  &__select {
+    display: none;
   }
 
-  &__road,
-  &__gravel,
-  &__tt {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(340px, 1fr));
-    column-gap: 30px;
-
-    &_hidden {
-      display: none;
-    }
-
-    @media screen and (max-width: $mobile-width) {
-      display: block;
-    }
+  // ul - сюда вставляем шаблон карточки
+  // 3 карточки для декстопной версии
+  // 1 карточку для мобильной версии
+  &__media {
+    display: flex;
+    margin: 5px 0 0;
+    padding: 0;
+    list-style-type: none;
+    gap: 30px;
   }
 
-  &__list {
-    display: grid;
-      grid-template-columns: repeat(1, minmax(340px, 1fr));
-      column-gap: 30px;
-  }
-
+  // li - сама карточка
   &__card {
-    // border: 1px solid red;
     display: flex;
     justify-content: center;
     border-radius: 20px;
     box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
-    margin-bottom: 50px;
-    width: 380px;
-    height: 380px;
+    max-width: 380px;
+    padding: 20px;
     margin-top: 66px;
     background-color: $bg-color-card;
     position: relative;
-
-    @media screen and (max-width: $mobile-width) {
-      width: calc(100% - 2*18px);
-      max-width: 284px;
-      max-height: 284px;
-      margin: 0 auto;
-    }
   }
 
+  &__card-link {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  // figure
   &__bike-photo {
+    margin: 0;
+    padding: 0;
   }
 
+  // img
   &__card-image {
+    width: 100%;
     border-radius: 20px;
-
-    @media screen and (max-width: $mobile-width) {
-      width: 100%;
-    }
   }
 
   &__card-title {
     position: absolute;
     left: 0;
-    bottom: -32px;
+    bottom: -40px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 300px;
 
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
     color: $text-color-title;
+  }
+
+  &__toggle-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .bikes {
+    padding: 40px 18px 0;
+
+    &__title {
+      border-top: 1px solid #e3e3e3;
+      width: calc(100% - 2 * 18px);
+      margin: 0 0 40px;
+      padding-top: 40px;
+
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    &__nav-bar {
+      display: none;
+    }
+
+    &__select {
+      display: flex;
+      width: 114px;
+      height: 30px;
+      margin: 0 0 18px 0;
+      padding: 0 8px 0 7px;
+
+      color: #151515;
+      background-color: transparent;
+      outline: none;
+      border: 1px solid #e3e3e3;
+      box-sizing: border-box;
+      border-radius: 2px;
+
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 14px;
+    }
+
+    &__card {
+      width: 284px;
+      margin: 0 auto;
+    }
+
+    &__card-image {
+      margin: 15px 15px 3px;
+      width: 254px;
+      height: 254px;
+    }
+
+    &__card-title {
+      position: static;
+      text-align: center;
+      margin: 0 auto 16px;
+      padding: 0;
+
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__toggle-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    &__toggle {
+      background-image: url(../../images/bike-toggle.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 4px;
+      height: 4px;
+      margin-right: 5px;
+      cursor: pointer;
+
+      &_active {
+        background-image: url(../../images/bike-toggle-active.svg);
+      }
+    }
+
+    &__toggle:last-child {
+      margin-right: 0;
+    }
   }
 }
