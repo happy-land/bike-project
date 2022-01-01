@@ -58,18 +58,22 @@
 .header__burger-button {
   display: none;
   border: 0;
-  width: 28px;
-  height: 28px;
-  margin: 28px 18px 30px auto;
+  width: 22px;
+  height: 22px;
+  margin: 24px 18px 24px auto;
   background-image: url(../../images/header-burger-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 .header__close-button {
   display: none;
 }
 
 @media screen and (max-width: 1060px) {
+  .header {
+    border: 1px solid red;
+  }
   .header__container {
     flex-direction: column;
   }
@@ -131,6 +135,11 @@
   margin-top: 90px;
 }
 
+@media screen and (max-width: 1060px) {
+  .content__intro {
+    margin-top: 70px;
+  }
+}
 .intro {
   font-family: "Inter", Arial, sans-serif;
   display: flex;
@@ -668,11 +677,13 @@
     line-height: 14px;
   }
   .bikes__card {
-    width: 284px;
+    max-width: 284px;
+    width: calc(100% - 2 * 18px);
+    padding: 15px;
     margin: 0 auto;
   }
   .bikes__card-image {
-    margin: 15px 15px 3px;
+    margin: 15px 0 3px;
     width: 254px;
     height: 254px;
   }

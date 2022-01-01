@@ -173,12 +173,14 @@
     }
 
     &__card {
-      width: 284px;
+      max-width: 284px;
+      width: calc(100% - 2 * 18px);
+      padding: 15px;
       margin: 0 auto;
     }
 
     &__card-image {
-      margin: 15px 15px 3px;
+      margin: 15px 0 3px;
       width: 254px;
       height: 254px;
     }
