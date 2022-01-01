@@ -16,7 +16,6 @@
   }
 
   &__nav-bar {
-    // border: 1px solid black;
     display: flex;
     justify-content: end;
     margin: 28px 125px 28px auto; // по макету 120px
@@ -31,7 +30,6 @@
   }
 
   &__list-item {
-    // border: 1px solid red;
     margin: 0;
     padding: 0;
     margin-right: 34px;
@@ -50,12 +48,13 @@
   &__burger-button {
     display: none;
     border: 0;
-    width: 28px;
-    height: 28px;
-    margin: 28px 18px 30px auto;
+    width: 22px;
+    height: 22px;
+    margin: 24px 18px 24px auto;
     background-image: url(../../images/header-burger-icon.svg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
   }
 
   &__close-button {
@@ -65,7 +64,7 @@
 
 @media screen and (max-width: $mobile-width) {
   .header {
-    // border: 1px solid red;
+    border: 1px solid red;
 
     &__container {
       flex-direction: column;
@@ -79,7 +78,6 @@
       display: none;
 
       &_type_mobile {
-        // border: 1px solid red;
         display: flex;
         margin: 64px auto 0;
       }

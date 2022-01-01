@@ -10,3 +10,11 @@
     margin-top: 90px; 
   }
 }
+
+@media screen and (max-width: $mobile-width) {
+  .content {
+    &__intro {
+      margin-top: 70px; 
+    }
+  }
+}
