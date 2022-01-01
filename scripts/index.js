@@ -33,6 +33,7 @@ const sliderData = [
       { link: './images/surface-road.jpeg', alt: 'Покрытие-шоссе' },
       { link: './images/surface-gravel.jpeg', alt: 'Покрытие-легкое бездорожье' }
     ],
+    type: 'surface-slider__line surface-slider__line_type_road'
   },
   {
     title: 'Грэвел',
@@ -41,6 +42,7 @@ const sliderData = [
       { link: './images/surface-gravel.jpeg', alt: 'Покрытие-легкое бездорожье' },
       { link: './images/surface-tt.jpeg', alt: 'Покрытие-ровный асфальт' }
     ],
+    type: 'surface-slider__line surface-slider__line_type_gravel'
   },
   {
     title: 'ТТ',
@@ -49,6 +51,7 @@ const sliderData = [
       { link: './images/surface-tt.jpeg', alt: 'Покрытие-ровный асфальт' },
       { link: './images/surface-road.jpeg', alt: 'Покрытие-шоссе' }
     ],
+    type: 'surface-slider__line surface-slider__line_type_tt'
   }
 ];
 
@@ -60,6 +63,7 @@ const surfaceSliderText = surfaceSlider.querySelector('.surface-slider__text');
 
 const surfaceSliderFirstImage = surfaceSlider.querySelector('.surface-slider__image-first');
 const surfaceSliderSecondImage = surfaceSlider.querySelector('.surface-slider__image-second');
+const surfaceLine = surfaceSlider.querySelector('.surface-slider__line');
 
 const sliderLeftButton = document.querySelector('.surface-slider__btn-left');
 const sliderRightButton = document.querySelector('.surface-slider__btn-right');
@@ -81,6 +85,8 @@ const changeSlide = (currentSlide, direction) => {
   surfaceSliderFirstImage.alt = sliderData[currentSlide].images[0].alt;
   surfaceSliderSecondImage.src = sliderData[currentSlide].images[1].link;
   surfaceSliderSecondImage.alt = sliderData[currentSlide].images[1].alt;
+
+  surfaceLine.classList = sliderData[currentSlide].type;
 
   return currentSlide;
 }
