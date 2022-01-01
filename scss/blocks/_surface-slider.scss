@@ -42,6 +42,7 @@
   }
 
   &__media-container {
+    position: relative;
     display: flex;
     margin: 0 0 50px;
     overflow: hidden;
@@ -56,6 +57,42 @@
   &__image-second {
     object-fit: contain;
     max-width: 100%;
+  }
+
+  &__green-box {
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+    width: 100px;
+    height: 40px;
+    // z-index: 1;
+    background-image: url(../../images/green-box.svg);
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+
+  &__line {
+    position: absolute;
+    left: 16px;
+    bottom: 12px;
+    width: 50px;
+    height: 16px;
+    background-position: left;
+    background-repeat: no-repeat;
+
+    &_type_road {
+      background-image: url(../../images/line-road.svg);
+    }
+
+    &_type_gravel {
+      bottom: 6px;
+      background-image: url(../../images/line-gravel.svg);
+    }
+
+    &_type_tt {
+      bottom: 3px;
+      background-image: url(../../images/line-tt.svg);
+    }
   }
 
   &__action-area {
