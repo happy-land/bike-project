@@ -1,0 +1,68 @@
+.theme-switcher {
+  display: flex;
+  position: absolute;
+  right: 123px;
+  bottom: 70px;
+
+  &__sun {
+    @include bg-image(28px, 28px);
+    background-image: url(../../images/theme/sun-light-icon.svg);
+    margin-right: 22px;
+
+    &_theme_dark {
+      background-image: url(../../images/theme/sun-dark-icon.svg);
+    }
+  }
+
+  &__moon {
+    @include bg-image(28px, 28px);
+    background-image: url(../../images/theme/moon-light-icon.svg);
+
+    &_theme_dark {
+      background-image: url(../../images/theme/moon-dark-icon.svg);
+    }
+  }
+
+  &__bg {
+    @include bg-image(44px, 24px);
+    background-color: #ffffff;
+    border-radius: 24px;
+    position: relative;
+    margin-right: 22px;
+    cursor: pointer;
+
+    &_theme_dark {
+      background-color: #545454;
+    }
+  }
+
+  &__switch {
+    @include bg-image(20px, 20px);
+    background-color: #24b47e;
+    border-radius: 20px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    &_theme_dark {
+      left: 22px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .theme-switcher {
+    display: none;
+    bottom: 38px;
+    right: calc(50% - 136px/2);
+    z-index: 100;
+    // transform: translateX(-50%);
+    
+
+    &_visible {
+      position: fixed;
+      display: flex;
+     
+    }
+  }
+}

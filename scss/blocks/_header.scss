@@ -1,5 +1,4 @@
 .header {
-  // border: 1px solid red;
   font-family: $font-family;
   width: 100%;
   position: fixed;
@@ -13,13 +12,16 @@
     align-items: center;
     margin: 0 auto;
     background-color: $bg-color-container;
+
+    &_dark {
+      background-color: $bg-color-container-dark;
+    }
   }
 
   &__nav-bar {
     display: flex;
     justify-content: end;
     margin: 28px 125px 28px auto; // по макету 120px
-    // flex: 1;
   }
 
   &__link-list {
@@ -43,6 +45,18 @@
     color: $text-color-title;
     font-size: 14px;
     line-height: 18px;
+    transition: opacity .1s ease-in;
+
+    &_dark {
+      color: $text-color-text-dark;
+    }
+  }
+
+  &__link:hover {
+    opacity: .75;
+    &_dark {
+      opacity: .65;
+    }
   }
 
   &__burger-button {
@@ -51,6 +65,7 @@
     width: 22px;
     height: 22px;
     margin: 24px 18px 24px auto;
+    background-color: transparent;
     background-image: url(../../images/header-burger-icon.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -64,7 +79,6 @@
 
 @media screen and (max-width: $mobile-width) {
   .header {
-    border: 1px solid red;
 
     &__container {
       flex-direction: column;
@@ -117,6 +131,7 @@
       width: 32px;
       height: 32px;
       margin: 20px 15px 30px auto;
+      background-color: transparent;
       background-image: url(../../images/header-close-icon.svg);
       background-repeat: no-repeat;
       background-position: center;

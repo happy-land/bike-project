@@ -18,6 +18,10 @@
     line-height: 60px;
     letter-spacing: -0.5px;
     color: $text-color-title;
+
+    &_dark {
+      color: $text-color-title-dark;
+    }
   }
 
   &__nav-bar {
@@ -56,6 +60,14 @@
 
     &_active:hover {
       opacity: 0.75;
+    }
+
+    &_dark {
+      color: $text-color-secondary-dark;
+    }
+
+    &_active-dark {
+      color: $text-color-title-dark;
     }
   }
 
@@ -128,6 +140,10 @@
     font-size: 18px;
     line-height: 22px;
     color: $text-color-title;
+
+    &_dark {
+      color: $text-color-title-dark;
+    }
   }
 
   &__toggle-container {

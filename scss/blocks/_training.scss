@@ -7,10 +7,6 @@
   padding: 150px 120px 120px;
   font-family: "Inter", Arial, sans-serif;
 
-  @media screen and (max-width: $mobile-width) {
-    padding: 40px 0px 60px;
-  }
-
   // &__content {
   // }
 
@@ -25,14 +21,8 @@
     letter-spacing: -0.5px;
     color: #151515;
 
-    @media screen and (max-width: $mobile-width) {
-      border-top: 1px solid #E3E3E3;
-      padding-top: 40px;
-      width: calc(100% - 2 * 18px);
-      margin: 0 auto;
-
-      font-size: 32px;
-      line-height: 40px;
+    &_dark {
+      color: $text-color-title-dark;
     }
   }
 
@@ -46,12 +36,8 @@
     color: $text-color-text;
     opacity: 0.7;
 
-    @media screen and (max-width: $mobile-width) {
-      width: calc(100% - 2 * 18px);
-      margin: 0 auto;
-
-      font-size: 12px;
-      line-height: 18px;
+    &_dark {
+      color: $text-color-text-dark;
     }
   }
 
@@ -60,11 +46,6 @@
     margin: 182px 0 0;
     padding: 0;
     list-style-type: none;
-
-    @media screen and (max-width: $mobile-width) {
-      width: calc(100% - 2 * 18px);
-      margin: 40px auto 0;
-    }
   }
 
   &__list-item {
@@ -86,36 +67,73 @@
     color: $text-color-title;
     transition: opacity 0.1s ease-in;
 
-    @media screen and (max-width: $mobile-width) {
-      font-size: 14px;
-      line-height: 20px;
+    &_dark {
+      color: $text-color-title-dark;
     }
   }
 
   &__link:hover {
-    opacity: 0.75;
+    opacity: .75;
+    &_dark {
+      opacity: .65;
+    }
   }
 
   &__media-desktop {
     width: 580px;
     height: 460px;
-
-    @media screen and (max-width: $mobile-width) {
-      display: none;
-    }
   }
+
   &__media-mobile {
     display: none;
+  }
 
-    @media screen and (max-width: $mobile-width) {
+  &__image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .training {
+    padding: 40px 0px 60px;
+
+    &__title {
+      border-top: 1px solid #e3e3e3;
+      padding-top: 40px;
+      width: calc(100% - 2 * 18px);
+      margin: 0 auto;
+
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    &__text {
+      width: calc(100% - 2 * 18px);
+      margin: 0 auto;
+
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__apps {
+      width: calc(100% - 2 * 18px);
+      margin: 40px auto 0;
+    }
+
+    &__link {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__media-desktop {
+      display: none;
+    }
+
+    &__media-mobile {
       display: block;
       max-width: 580px;
       width: calc(100% - 2 * 18px);
       margin: 40px auto 40px;
     }
-  }
-
-  &__image {
-    width: 100%;
   }
 }
