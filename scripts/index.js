@@ -6,6 +6,8 @@ const mobileMenuCloseButton = document.querySelector('.header__close-button');
 
 const mobileMenuNav = document.querySelector('.header__nav-bar');
 
+const themeSwitcher = document.querySelector('.theme-switcher');
+
 const toggleHeader = () => {
   mobileMenuHeaderContainer.classList.toggle('header__container_type_mobile');
   mobileMenuOpenButton.classList.toggle('header__burger-button_hidden');
@@ -15,10 +17,12 @@ const toggleHeader = () => {
 
 const openMobileMenu = () => {
   toggleHeader();
+  themeSwitcher.classList.add('theme-switcher_visible');
 };
 
 const closeMobileMenu = () => {
   toggleHeader();
+  themeSwitcher.classList.remove('theme-switcher_visible');
 };
 
 mobileMenuOpenButton.addEventListener('click', () => openMobileMenu());
@@ -335,3 +339,83 @@ submitButton.addEventListener('click', (event) => {
   event.preventDefault();
   emailInput.value = 'Круто!'
 });
+
+
+// Переключатель темы
+
+const switchButton = themeSwitcher.querySelector('.theme-switcher__bg');
+
+// чекбокс
+const themeSwitcherCheckBox = document.querySelector('.footer__invisible-checkbox');
+
+switchButton.addEventListener('click', () => switchTheme());
+
+let isLight = true;
+themeSwitcherCheckBox.checked = false;
+
+const switchTheme = () => {
+  themeSwitcherCheckBox.checked = !isLight;
+  isLight = !isLight;
+
+  // container
+  document.querySelector('.container').classList.toggle('container_dark');
+
+  // header
+  document.querySelector('.header__container').classList.toggle('header__container_dark');
+  document.querySelectorAll('.header__link')
+    .forEach(link => link
+      .classList.toggle('header__link_dark')
+    );
+
+  // intro
+  document.querySelector('.intro__title').classList.toggle('intro__title_dark');
+  document.querySelector('.intro__text').classList.toggle('intro__text_dark');
+
+  // quote
+  document.querySelector('.quote__text').classList.toggle('quote__text_dark');
+  document.querySelector('.quote__author').classList.toggle('quote__author_dark');
+  document.querySelector('.quote__occupation').classList.toggle('quote__occupation_dark');
+
+  // surface slider 
+  document.querySelector('.surface-slider__title').classList.toggle('surface-slider__title_dark');
+  document.querySelector('.surface-slider__text').classList.toggle('surface-slider__text_dark');
+  document.querySelector('.surface-slider__btn-left').classList.toggle('surface-slider__btn-left_dark');
+  document.querySelector('.surface-slider__btn-right').classList.toggle('surface-slider__btn-right_dark');
+
+  // bikes
+  document.querySelector('.bikes__title').classList.toggle('bikes__title_dark');
+
+  document.querySelectorAll('.bikes__list-item')
+    .forEach((item) => {
+      item.classList.toggle('bikes__list-item_dark');
+    });
+
+  document.querySelectorAll('.bikes__card-title')
+    .forEach(title => title
+      .classList.toggle('bikes__card-title_dark'));
+
+  // training
+  document.querySelector('.training__title').classList.toggle('training__title_dark');
+  document.querySelector('.training__text').classList.toggle('training__text_dark');
+  document.querySelectorAll('.training__link')
+  .forEach(item => item
+    .classList.toggle('training__link_dark'));
+
+  // footer
+  document.querySelector('.footer').classList.toggle('footer_dark');
+  document.querySelector('.footer__title').classList.toggle('footer__title_dark');
+  document.querySelector('.footer__copyright').classList.toggle('footer__copyright_dark');
+  document.querySelector('.form__field').classList.toggle('form__field_dark');
+  document.querySelector('.form__btn-submit').classList.toggle('form__btn-submit_dark');
+
+
+
+  // передвинуть ползунок
+  themeSwitcher.querySelector('.theme-switcher__switch').classList.toggle('theme-switcher__switch_theme_dark');
+  themeSwitcher.querySelector('.theme-switcher__bg').classList.toggle('theme-switcher__bg_theme_dark');
+
+  themeSwitcher.querySelector('.theme-switcher__sun').classList.toggle('theme-switcher__sun_theme_dark');
+  themeSwitcher.querySelector('.theme-switcher__moon').classList.toggle('theme-switcher__moon_theme_dark');
+
+
+}

@@ -22,6 +22,10 @@
     &_hidden {
       display: none;
     }
+
+    &_dark {
+      color: $text-color-title-dark;
+    }
   }
 
   &__text {
@@ -38,6 +42,10 @@
 
     &_hidden {
       display: none;
+    }
+
+    &_dark {
+      color: $text-color-text-dark;
     }
   }
 
@@ -97,18 +105,13 @@
 
   &__action-area {
     position: static;
-    
   }
 
   &__btn {
     border: 0;
     border-radius: 50px;
-    width: 50px;
-    height: 50px;
+    @include bg-image(50px, 50px);
     margin-right: 20px;
-    background-color: #ebebeb;
-    background-repeat: no-repeat;
-    background-position: center;
     cursor: pointer;
     transition: opacity 0.1s ease-in;
   }
@@ -122,11 +125,21 @@
   }
 
   &__btn-left {
+    background-color: #ebebeb;
     background-image: url(../../images/arrow-left.svg);
+    &_dark {
+      background-color: #434343;
+      background-image: url(../../images/arrow-left-dark.svg);
+    }
   }
 
   &__btn-right {
+    background-color: #ebebeb;
     background-image: url(../../images/arrow-right.svg);
+    &_dark {
+      background-color: #434343;
+      background-image: url(../../images/arrow-right-dark.svg);
+    }
   }
 }
 
