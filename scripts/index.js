@@ -189,9 +189,7 @@ bikeSelect.addEventListener('change', () => toggleBikeGroupMobile());
 
 // десктоп
 const bikeList = document.querySelectorAll('.bikes__list-item');
-console.log('bikeList: ' + bikeList);
 bikeList.forEach(bikeGroup => {
-  console.log('bikeGropu = -===' + bikeGroup);
   bikeGroup.addEventListener('click', () => {
     toggleBikeGroupDesktop(bikeGroup.id);
   });
@@ -200,9 +198,7 @@ bikeList.forEach(bikeGroup => {
 // функция переключает карточки в десктопной версии
 const toggleBikeGroupDesktop = (id) => {
   const bikeType = id;
-  console.log(bikeType);
   const selectedGroup = bikesData.filter(group => group.type == bikeType);
-  // console.log('selectedGroup = ' + selectedGroup[0].items);
 
   // очистить bikeMedia
   bikeMedia.innerHTML = '';
@@ -221,7 +217,6 @@ const toggleBikeGroupDesktop = (id) => {
   bikeSelect.value = id;
 
   selectedGroup[0].items.forEach(bike => {
-    // console.log('bike: ' + bike.title);
     // создать карточку
     const createdCard = createCard(bike.title, bike.image, bike.link);
     renderCard(createdCard);
@@ -257,7 +252,6 @@ const toggleBikeGroupMobile = (index = 0) => {
   const bikeType = bikeSelect.value;
   // найти в bikeData объект со св-вом type = bikeType (gravel)
   const selectedGroup = bikesData.filter(group => group.type == bikeType);
-  // console.log('Group = ' + selectedGroup[0].items[0].title);
 
   // создать карточку
   const card = {
@@ -298,7 +292,6 @@ const renderTogglers = (items, index) => {
 const breakpoint = 1060;
 
 window.addEventListener('resize', () => {
-  console.log(window.innerWidth);
   if (window.innerWidth >= breakpoint) {
     // показать 3 карточки в десктопной версии
     toggleBikeGroupDesktop(bikeSelect.value);
@@ -315,8 +308,6 @@ if (window.innerWidth >= breakpoint) {
 }
 
 
-
-
 // Форма - эл. почта
 
 const form = document.querySelector('form');
@@ -325,9 +316,6 @@ const submitButton = form.querySelector('.form__btn-submit');
 
 
 const handleInput = (target) => {
-  // console.log(target.parentElement);
-
-  // console.log(target.value);
   if (target.value.length > 0) {
     submitButton.classList.remove('form__btn-submit_hidden');
   } else {
@@ -370,6 +358,8 @@ const switchTheme = () => {
   // intro
   document.querySelector('.intro__title').classList.toggle('intro__title_dark');
   document.querySelector('.intro__text').classList.toggle('intro__text_dark');
+  document.querySelector('.intro__bike-text').classList.toggle('intro__bike-text_dark');
+
 
   // quote
   document.querySelector('.quote__text').classList.toggle('quote__text_dark');
