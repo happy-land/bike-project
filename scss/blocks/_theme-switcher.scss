@@ -6,20 +6,20 @@
 
   &__sun {
     @include bg-image(28px, 28px);
-    background-image: url(../../images/theme/sun-light-icon.svg);
+    background-image: url(../images/theme/sun-light-icon.svg);
     margin-right: 22px;
 
     &_theme_dark {
-      background-image: url(../../images/theme/sun-dark-icon.svg);
+      background-image: url(../images/theme/sun-dark-icon.svg);
     }
   }
 
   &__moon {
     @include bg-image(28px, 28px);
-    background-image: url(../../images/theme/moon-light-icon.svg);
+    background-image: url(../images/theme/moon-light-icon.svg);
 
     &_theme_dark {
-      background-image: url(../../images/theme/moon-dark-icon.svg);
+      background-image: url(../images/theme/moon-dark-icon.svg);
     }
   }
 

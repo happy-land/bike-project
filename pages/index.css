@@ -78,7 +78,7 @@
   height: 22px;
   margin: 24px 18px 24px auto;
   background-color: transparent;
-  background-image: url(../../images/header-burger-icon.svg);
+  background-image: url(../images/header-burger-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -130,7 +130,7 @@
     height: 32px;
     margin: 20px 15px 30px auto;
     background-color: transparent;
-    background-image: url(../../images/header-close-icon.svg);
+    background-image: url(../images/header-close-icon.svg);
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
@@ -515,7 +515,7 @@
   bottom: 16px;
   width: 100px;
   height: 40px;
-  background-image: url(../../images/green-box.svg);
+  background-image: url(../images/green-box.svg);
   background-position: left;
   background-repeat: no-repeat;
 }
@@ -529,15 +529,15 @@
   background-repeat: no-repeat;
 }
 .surface-slider__line_type_road {
-  background-image: url(../../images/line-road.svg);
+  background-image: url(../images/line-road.svg);
 }
 .surface-slider__line_type_gravel {
   bottom: 6px;
-  background-image: url(../../images/line-gravel.svg);
+  background-image: url(../images/line-gravel.svg);
 }
 .surface-slider__line_type_tt {
   bottom: 3px;
-  background-image: url(../../images/line-tt.svg);
+  background-image: url(../images/line-tt.svg);
 }
 .surface-slider__action-area {
   position: static;
@@ -561,19 +561,19 @@
 }
 .surface-slider__btn-left {
   background-color: #ebebeb;
-  background-image: url(../images/arrow_left.svg);
+  background-image: url(../images/arrow-left.svg);
 }
 .surface-slider__btn-left_dark {
   background-color: #434343;
-  background-image: url(../../images/arrow-left-dark.svg);
+  background-image: url(../images/arrow-left-dark.svg);
 }
 .surface-slider__btn-right {
   background-color: #ebebeb;
-  background-image: url(../../images/arrow-right.svg);
+  background-image: url(../images/arrow-right.svg);
 }
 .surface-slider__btn-right_dark {
   background-color: #434343;
-  background-image: url(../../images/arrow-right-dark.svg);
+  background-image: url(../images/arrow-right-dark.svg);
 }
 
 @media screen and (max-width: 1060px) {
@@ -806,7 +806,7 @@
     list-style-type: none;
   }
   .bikes__toggle {
-    background-image: url(../../images/bike-toggle.svg);
+    background-image: url(../images/bike-toggle.svg);
     background-position: center;
     background-repeat: no-repeat;
     width: 4px;
@@ -815,7 +815,7 @@
     cursor: pointer;
   }
   .bikes__toggle_active {
-    background-image: url(../../images/bike-toggle-active.svg);
+    background-image: url(../images/bike-toggle-active.svg);
   }
   .bikes__toggle:last-child {
     margin-right: 0;
@@ -1002,7 +1002,7 @@
     bottom: 16px;
     width: 38px;
     height: 38px;
-    background-image: url(../../images/footer-logo.svg);
+    background-image: url(../images/footer-logo.svg);
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -1095,21 +1095,21 @@
   height: 28px;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../../images/theme/sun-light-icon.svg);
+  background-image: url(../images/theme/sun-light-icon.svg);
   margin-right: 22px;
 }
 .theme-switcher__sun_theme_dark {
-  background-image: url(../../images/theme/sun-dark-icon.svg);
+  background-image: url(../images/theme/sun-dark-icon.svg);
 }
 .theme-switcher__moon {
   width: 28px;
   height: 28px;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../../images/theme/moon-light-icon.svg);
+  background-image: url(../images/theme/moon-light-icon.svg);
 }
 .theme-switcher__moon_theme_dark {
-  background-image: url(../../images/theme/moon-dark-icon.svg);
+  background-image: url(../images/theme/moon-dark-icon.svg);
 }
 .theme-switcher__bg {
   width: 44px;

@@ -74,7 +74,7 @@
     width: 100px;
     height: 40px;
     // z-index: 1;
-    background-image: url(../../images/green-box.svg);
+    background-image: url(../images/green-box.svg);
     background-position: left;
     background-repeat: no-repeat;
   }
@@ -89,17 +89,17 @@
     background-repeat: no-repeat;
 
     &_type_road {
-      background-image: url(../../images/line-road.svg);
+      background-image: url(../images/line-road.svg);
     }
 
     &_type_gravel {
       bottom: 6px;
-      background-image: url(../../images/line-gravel.svg);
+      background-image: url(../images/line-gravel.svg);
     }
 
     &_type_tt {
       bottom: 3px;
-      background-image: url(../../images/line-tt.svg);
+      background-image: url(../images/line-tt.svg);
     }
   }
 
@@ -126,20 +126,20 @@
 
   &__btn-left {
     background-color: #ebebeb;
-    background-image: url(../images/arrow_left.svg);
+    background-image: url(../images/arrow-left.svg);
 
     &_dark {
       background-color: #434343;
-      background-image: url(../../images/arrow-left-dark.svg);
+      background-image: url(../images/arrow-left-dark.svg);
     }
   }
 
   &__btn-right {
     background-color: #ebebeb;
-    background-image: url(../../images/arrow-right.svg);
+    background-image: url(../images/arrow-right.svg);
     &_dark {
       background-color: #434343;
-      background-image: url(../../images/arrow-right-dark.svg);
+      background-image: url(../images/arrow-right-dark.svg);
     }
   }
 }
