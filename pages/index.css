@@ -561,7 +561,7 @@
 }
 .surface-slider__btn-left {
   background-color: #ebebeb;
-  background-image: url(../../images/arrow_left.svg);
+  background-image: url(../images/arrow_left.svg);
 }
 .surface-slider__btn-left_dark {
   background-color: #434343;
