@@ -207,6 +207,10 @@
   height: 50px;
   color: #fff;
   background-color: #24B47E;
+  background: linear-gradient(to left, #319e75 50%, #24b47e 50%);
+  background-position-x: 0%;
+  transition: background-position 0.2s ease-in;
+  background-size: 200%;
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
@@ -215,36 +219,7 @@
   cursor: pointer;
 }
 .intro__btn-details:hover {
-  -webkit-animation: gradient 0.1s ease-in 1 normal forwards;
-          animation: gradient 0.1s ease-in 1 normal forwards;
-}
-@-webkit-keyframes gradient {
-  0% {
-    background-image: linear-gradient(to right, #319e75 0px 10px, #24b47e 10px 180px);
-  }
-  33% {
-    background-image: linear-gradient(to right, #319e75 10px 40px, #24b47e 40px 180px);
-  }
-  67% {
-    background-image: linear-gradient(to right, #319e75 40px 100px, #24b47e 100px 180px);
-  }
-  100% {
-    background-image: linear-gradient(to right, #319e75 100px 179px, #24b47e 179px 180px);
-  }
-}
-@keyframes gradient {
-  0% {
-    background-image: linear-gradient(to right, #319e75 0px 10px, #24b47e 10px 180px);
-  }
-  33% {
-    background-image: linear-gradient(to right, #319e75 10px 40px, #24b47e 40px 180px);
-  }
-  67% {
-    background-image: linear-gradient(to right, #319e75 40px 100px, #24b47e 100px 180px);
-  }
-  100% {
-    background-image: linear-gradient(to right, #319e75 100px 179px, #24b47e 179px 180px);
-  }
+  background-position-x: -100%;
 }
 .intro__bike-text {
   margin: 167px 0 0;
@@ -262,27 +237,32 @@
   display: inline-block;
   width: 132px;
   margin-left: 30px;
-  border: 1px solid #D7D4D4;
+  border: 1px solid #d7d4d4;
   vertical-align: middle;
 }
 .intro__bike-fix-card {
   position: absolute;
-  top: 486px;
-  right: 370px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  z-index: 1;
 }
 .intro__bike-image {
-  width: 340px;
-  background: #f4f4f4;
-  box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
-  border-radius: 20px;
-  padding: 20px 50px 20px;
   position: -webkit-sticky;
   position: sticky;
   top: 347px;
+  width: 340px;
+  height: 260px;
+  margin: 0 0 79px 260px;
+  padding: 20px 50px;
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.08);
 }
 .intro__image {
   width: 100%;
@@ -334,22 +314,17 @@
     display: none;
   }
   .intro__bike-fix-card {
-    top: 400px;
-    right: 68px;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+    justify-content: flex-start;
+    top: 385px;
+    left: 20px;
   }
   .intro__bike-image {
+    position: relative;
     width: 180px;
-    background: #f4f4f4;
-    box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
-    border-radius: 20px;
-    padding: 10px 26px 10px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 347px;
+    padding: 10px 26px;
+    margin: 0;
+    height: 138px;
+    top: 0;
   }
 }
 .quote {
@@ -362,14 +337,12 @@
   font-family: "Inter", Arial, sans-serif;
 }
 .quote__media {
-  border: 1px solid red;
   max-width: 650px;
 }
 .quote__image {
   max-width: 100%;
 }
 .quote__content {
-  border: 1px solid red;
   padding-left: 80px;
   padding-top: 5px;
 }
@@ -498,13 +471,13 @@
   margin: 0 0 50px;
   overflow: hidden;
 }
-.surface-slider__image-first {
+.surface-slider__image-main {
   -o-object-fit: contain;
      object-fit: contain;
   max-width: 100%;
   margin-right: 40px;
 }
-.surface-slider__image-second {
+.surface-slider__image-secondary {
   -o-object-fit: contain;
      object-fit: contain;
   max-width: 100%;
@@ -603,10 +576,10 @@
     max-width: 650px;
     margin: 0 auto;
   }
-  .surface-slider__image-first {
+  .surface-slider__image-main {
     width: 100%;
   }
-  .surface-slider__image-second {
+  .surface-slider__image-secondary {
     display: none;
   }
   .surface-slider__action-area {
@@ -778,6 +751,9 @@
     font-weight: 600;
     font-size: 11px;
     line-height: 14px;
+  }
+  .bikes__select_dark {
+    color: #ffffff;
   }
   .bikes__card {
     max-width: 284px;
@@ -1082,6 +1058,10 @@
   }
   .form__field {
     width: 100%;
+  }
+  .form__btn-submit {
+    left: auto;
+    right: 22px;
   }
 }
 .theme-switcher {

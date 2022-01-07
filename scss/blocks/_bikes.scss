@@ -186,6 +186,10 @@
       font-weight: 600;
       font-size: 11px;
       line-height: 14px;
+
+      &_dark {
+        color: $text-color-title-dark;
+      }
     }
 
     &__card {

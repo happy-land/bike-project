@@ -7,7 +7,6 @@
   padding-left: 120px;
 
   &__title {
-    // border: 1px solid grey;
     margin: 66px 0 50px;
     padding: 0;
     width: 460px;
@@ -60,6 +59,11 @@
     color: $btn-text-color;
     background-color: $btn-bg-color;
 
+    background: linear-gradient(to left, #319e75 50%, #24b47e 50%);
+    background-position-x: 0%;
+    transition: background-position 0.2s ease-in;
+    background-size: 200%;
+
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
@@ -70,22 +74,7 @@
   }
 
   &__btn-details:hover {
-    animation: gradient 0.1s ease-in 1 normal forwards;
-  }
-
-  @keyframes gradient {
-    0% {
-      background-image: linear-gradient(to right, #319e75 0px 10px, #24b47e 10px 180px);
-    }
-    33% {
-      background-image: linear-gradient(to right, #319e75 10px 40px, #24b47e 40px 180px);
-    }
-    67% {
-      background-image: linear-gradient(to right, #319e75 40px 100px, #24b47e 100px 180px);
-    }
-    100% {
-      background-image: linear-gradient(to right, #319e75 100px 179px, #24b47e 179px 180px);
-    }
+    background-position-x: -100%;
   }
 
   &__bike-text {
@@ -107,29 +96,34 @@
     display: inline-block;
     width: 132px;
     margin-left: 30px;
-    border: 1px solid #D7D4D4;
+    border: 1px solid #d7d4d4;
     vertical-align: middle;
   }
 
   &__bike-fix-card {
     position: absolute;
-    top: 486px;
-    right: 370px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
-   
-    margin: 0;
-    padding: 0;
+
+    z-index: 1;
   }
 
   &__bike-image {
-    width: 340px;
-    background: #f4f4f4;
-    box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
-    border-radius: 20px;
-    padding: 20px 50px 20px;
     position: sticky;
     top: 347px;
+    width: 340px;
+    height: 260px;
+    margin: 0 0 79px 260px;
+    padding: 20px 50px;
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.08);
   }
 
   &__image {
@@ -190,25 +184,22 @@
     &__bike-line {
       display: none;
     }
-  
+
     &__bike-fix-card {
-      top: 400px;
-      right: 68px;
-      display: flex;
-      justify-content: center;
-     
-      margin: 0;
-      padding: 0;
+      justify-content: flex-start;
+      top: 385px;
+      left: 20px;
+      // left: calc(15% - 20px);
+
     }
-  
+
     &__bike-image {
+      position: relative;
       width: 180px;
-      background: #f4f4f4;
-      box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
-      border-radius: 20px;
-      padding: 10px 26px 10px;
-      position: sticky;
-      top: 347px;
+      padding: 10px 26px;
+      margin: 0;
+      height: 138px;
+      top: 0;
     }
   }
 }
