@@ -56,13 +56,13 @@
     overflow: hidden;
   }
 
-  &__image-first {
+  &__image-main {
     object-fit: contain;
     max-width: 100%;
     margin-right: 40px;
   }
 
-  &__image-second {
+  &__image-secondary {
     object-fit: contain;
     max-width: 100%;
   }
@@ -176,11 +176,11 @@
       margin: 0 auto;
     }
 
-    &__image-first {
+    &__image-main {
       width: 100%;
     }
 
-    &__image-second {
+    &__image-secondary {
       display: none;
     }
 

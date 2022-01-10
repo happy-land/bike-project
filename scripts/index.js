@@ -65,8 +65,8 @@ const surfaceSlider = document.querySelector('#surface-slider');
 const surfaceSliderTitle = surfaceSlider.querySelector('.surface-slider__title');
 const surfaceSliderText = surfaceSlider.querySelector('.surface-slider__text');
 
-const surfaceSliderFirstImage = surfaceSlider.querySelector('.surface-slider__image-first');
-const surfaceSliderSecondImage = surfaceSlider.querySelector('.surface-slider__image-second');
+const surfaceSliderFirstImage = surfaceSlider.querySelector('.surface-slider__image-main');
+const surfaceSliderSecondImage = surfaceSlider.querySelector('.surface-slider__image-secondary');
 const surfaceLine = surfaceSlider.querySelector('.surface-slider__line');
 
 const sliderLeftButton = document.querySelector('.surface-slider__btn-left');
@@ -380,6 +380,8 @@ const switchTheme = () => {
       item.classList.toggle('bikes__list-item_dark');
     });
 
+  document.querySelector('.bikes__select').classList.toggle('bikes__select_dark');
+
   document.querySelectorAll('.bikes__card-title')
     .forEach(title => title
       .classList.toggle('bikes__card-title_dark'));
@@ -388,8 +390,8 @@ const switchTheme = () => {
   document.querySelector('.training__title').classList.toggle('training__title_dark');
   document.querySelector('.training__text').classList.toggle('training__text_dark');
   document.querySelectorAll('.training__link')
-  .forEach(item => item
-    .classList.toggle('training__link_dark'));
+    .forEach(item => item
+      .classList.toggle('training__link_dark'));
 
   // footer
   document.querySelector('.footer').classList.toggle('footer_dark');
