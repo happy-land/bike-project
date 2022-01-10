@@ -1,23 +1,27 @@
 .header {
   font-family: $font-family;
+  width: 100%;
+  position: fixed;
+  right: 0;
+  z-index: 2;
 
   &__container {
     display: flex;
-    // border: 1px solid rgb(134, 134, 117);
     max-width: 1440px;
     min-width: 320px;
+    align-items: center;
     margin: 0 auto;
+    background-color: $bg-color-container;
+
+    &_dark {
+      background-color: $bg-color-container-dark;
+    }
   }
 
   &__nav-bar {
-    // border: 1px solid black;
     display: flex;
     justify-content: end;
     margin: 28px 125px 28px auto; // по макету 120px
-    // flex: 1;
-    @media screen and (max-width: $mobile-width) {
-      display: none;
-    }
   }
 
   &__link-list {
@@ -28,7 +32,6 @@
   }
 
   &__list-item {
-    // border: 1px solid red;
     margin: 0;
     padding: 0;
     margin-right: 34px;
@@ -42,20 +45,101 @@
     color: $text-color-title;
     font-size: 14px;
     line-height: 18px;
+    transition: opacity .1s ease-in;
+
+    &_dark {
+      color: $text-color-text-dark;
+    }
+  }
+
+  &__link:hover {
+    opacity: .75;
+    &_dark {
+      opacity: .65;
+    }
   }
 
   &__burger-button {
     display: none;
     border: 0;
-    width: 28px;
-    height: 28px;
-    margin: 28px 18px 30px auto;
-    background-image: url(../../images/header-burger-icon.svg);
+    width: 22px;
+    height: 22px;
+    margin: 24px 18px 24px auto;
+    background-color: transparent;
+    background-image: url(../images/header-burger-icon.svg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
+  }
 
-    @media screen and (max-width: $mobile-width) {
+  &__close-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .header {
+
+    &__container {
+      flex-direction: column;
+
+      &_type_mobile {
+        height: 100vh;
+      }
+    }
+
+    &__nav-bar {
+      display: none;
+
+      &_type_mobile {
+        display: flex;
+        margin: 64px auto 0;
+      }
+    }
+
+    &__link-list {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &__list-item {
+      margin: 0 0 32px 0;
+      text-align: center;
+    }
+
+    &__list-item:last-child {
+      margin: 0;
+    }
+
+    &__link {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    &__burger-button {
       display: block;
+      cursor: pointer;
+
+      &_hidden {
+        display: none;
+      }
+    }
+
+    &__close-button {
+      display: block;
+      border: 0;
+      width: 32px;
+      height: 32px;
+      margin: 20px 15px 30px auto;
+      background-color: transparent;
+      background-image: url(../images/header-close-icon.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+
+      &_hidden {
+        display: none;
+      }
     }
   }
 }

@@ -1,0 +1,6 @@
+@mixin bg-image($w, $h) {
+  width: $w;
+  height: $h;
+  background-position: center;
+  background-repeat: no-repeat;
+}

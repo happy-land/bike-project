@@ -1,4 +1,7 @@
 .container {
   background-color: $bg-color-container;
-  // border: 1px dashed yellow;
+
+  &_dark {
+    background-color: $bg-color-container-dark;
+  }
 }

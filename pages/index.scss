@@ -1,9 +1,8 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/fonts.css);
 
-// @import '../scss/blocks/swiper.scss';
-
 @import '../scss/variables.scss';
+@import '../scss/mixins.scss';
 @import '../scss/blocks/container.scss';
 @import '../scss/blocks/page.scss';
 @import '../scss/blocks/header.scss';
@@ -12,7 +11,7 @@
 @import '../scss/blocks/quote';
 @import '../scss/blocks/surface-slider';
 @import '../scss/blocks/bikes';
-@import '../scss/blocks/slider';
 @import '../scss/blocks/training';
 @import '../scss/blocks/footer';
 @import '../scss/blocks/form';
+@import '../scss/blocks/theme-switcher';

@@ -1,9 +1,10 @@
 .footer {
   font-family: $font-family;
   background-color: $bg-color-footer;
+  position: relative;
 
-  @media screen and (max-width: $mobile-width) {
-    position: relative;
+  &_dark {
+    background-color: $bg-color-footer-dark;
   }
 
   &__container {
@@ -13,10 +14,6 @@
     min-width: 320px;
     margin: 0 auto;
     padding: 80px 0 60px 120px;
-
-    @media screen and (max-width: $mobile-width) {
-      padding: 60px 0 25px;
-    }
   }
 
   &__title {
@@ -29,12 +26,8 @@
     line-height: 32px;
     color: $text-color-title;
 
-    @media screen and (max-width: $mobile-width) {
-      margin: 0 auto 40px;
-      width: calc(100% - 2 * 18px);
-
-      font-size: 24px;
-      line-height: 32px;
+    &_dark {
+      color: $text-color-title-dark;
     }
   }
 
@@ -48,20 +41,44 @@
     line-height: 20px;
     color: #cfcfcf;
 
-    @media screen and (max-width: $mobile-width) {
-      margin: 0 auto;
-      width: calc(100% - 2 * 18px);
+    &_dark {
+      color: #565656;
     }
   }
 
-  &__logo {
-    @media screen and (max-width: $mobile-width) {
+  &__invisible-checkbox {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .footer {
+    position: relative;
+
+    &__container {
+      padding: 60px 0 25px;
+    }
+
+    &__title {
+      margin: 0 auto 40px;
+      width: calc(100% - 2 * 18px);
+
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &__copyright {
+      margin: 0 auto;
+      width: calc(100% - 2 * 18px);
+    }
+
+    &__logo {
       position: absolute;
       right: 16px;
       bottom: 16px;
       width: 38px;
       height: 38px;
-      background-image: url(../../images/footer-logo.svg);
+      background-image: url(../images/footer-logo.svg);
       background-position: center;
       background-repeat: no-repeat;
     }

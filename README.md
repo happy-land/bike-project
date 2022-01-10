@@ -2,4 +2,4 @@
 
 ### Обзор
 
-Проект bike-project
+Проект bike-project.
